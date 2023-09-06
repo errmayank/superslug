@@ -1,0 +1,54 @@
+{
+  "name": "superslug",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "private": false,
+  "author": "Mayank Verma",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./main.d.cts",
+        "default": "./main.cjs"
+      },
+      "import": {
+        "types": "./main.d.ts",
+        "default": "./main.mjs"
+      }
+    }
+  },
+  "main": "./main.cjs",
+  "module": "./main.mjs",
+  "types": "./main.d.ts",
+  "scripts": {
+    "prebuild": "rm -rf ./build package.tgz",
+    "build": "tsup --config=tsup.config.cjs",
+    "build:tarball": "pnpm build && (cp -a package.json LICENSE.md README.md ./build) && (cd ./build && npm pack --pack-destination ..) && mv superslug-*.tgz package.tgz",
+    "publish:tarball": "npm publish package.tgz",
+    "dev": "tsup --config=tsup.config.cjs --watch",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/errmayank/superslug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/errmayank/superslug/issues"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.6.0",
+    "@typescript-eslint/parser": "6.6.0",
+    "@vitest/coverage-v8": "0.34.3",
+    "eslint": "8.48.0",
+    "eslint-config-prettier": "9.0.0",
+    "prettier": "3.0.3",
+    "tsup": "7.2.0",
+    "typescript": "5.2.2",
+    "vitest": "0.34.3"
+  }
+}
