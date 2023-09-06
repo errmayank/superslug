@@ -1,6 +1,6 @@
 {
   "name": "superslug",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "type": "module",
   "private": false,
@@ -52,5 +52,15 @@
     "typescript": "5.2.2",
     "vitest": "0.34.3"
   },
-  "keywords": ["slug", "generate", "url", "random", "human-readable-id", "human", "readable", "id", "identifier"]
+  "keywords": [
+    "slug",
+    "generate",
+    "url",
+    "random",
+    "human-readable-id",
+    "human",
+    "readable",
+    "id",
+    "identifier"
+  ]
 }
