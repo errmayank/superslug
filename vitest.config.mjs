@@ -9,7 +9,7 @@ export default defineConfig({
     },
     coverage: {
       provider: 'v8',
-      reporter: ['json', 'lcov', 'text', 'clover', 'text-summary'],
+      reporter: ['text', 'html', 'clover', 'json'],
     },
   },
 });
