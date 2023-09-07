@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
-      - name: Install dependencies
+      - name: 'Install dependencies'
         run: pnpm install
       - run: pnpm run format:check
   lint:
@@ -34,11 +34,11 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
-      - name: Install dependencies
+      - name: 'Install dependencies'
         run: pnpm install
       - run: pnpm run lint
-  test:
-    name: 'Test'
+  test_and_publish:
+    name: 'Test and Publish'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -49,9 +49,13 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
-      - name: Install dependencies
+      - name: 'Install dependencies'
         run: pnpm install
       - run: pnpm run test
+      - name: 'Upload coverage reports to Codecov'
+      - uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
   build:
     name: 'Build'
     runs-on: ubuntu-latest
@@ -64,6 +68,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
-      - name: Install dependencies
+      - name: 'Install dependencies'
         run: pnpm install
       - run: pnpm run build
