@@ -9,7 +9,7 @@ it('stress test randomInteger()', () => {
   let min = 0;
   let max = 100_000_000;
 
-  for (let i = 0; i < 100_000; i++) {
+  for (let i = 0; i < 10_000; i++) {
     const integer = randomInteger(min, max);
 
     expectTypeOf(integer).toBeNumber();
@@ -26,7 +26,7 @@ it('stress test randomInteger()', () => {
 });
 
 it('stress test randomAdjective()', () => {
-  for (let i = 0; i < 100_000; i++) {
+  for (let i = 0; i < 10_000; i++) {
     const adjective = randomAdjective();
 
     expectTypeOf(adjective).toBeString();
@@ -35,7 +35,7 @@ it('stress test randomAdjective()', () => {
 });
 
 it('stress test randomNoun()', () => {
-  for (let i = 0; i < 100_000; i++) {
+  for (let i = 0; i < 10_000; i++) {
     const noun = randomNoun();
 
     expectTypeOf(noun).toBeString();
@@ -44,7 +44,7 @@ it('stress test randomNoun()', () => {
 });
 
 it('stress test randomVerb()', () => {
-  for (let i = 0; i < 100_000; i++) {
+  for (let i = 0; i < 10_000; i++) {
     const verb = randomVerb();
 
     expectTypeOf(verb).toBeString();

@@ -1,3 +1,3 @@
 # superslug
 
-Whether you're looking to create unique URLs, human readable identifiers, or just in need of a random string; superslug can fill your slug generation needs.
+In case you're looking to create human readable identifiers, !unique URLs, or just random strings; superslug can fill your slug generation needs.
