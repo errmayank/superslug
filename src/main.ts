@@ -1,3 +1,11 @@
 import { randomAdjective, randomNoun, randomVerb } from '$src/util/main.js';
 
-export const superslug = () => `${randomAdjective()}-${randomNoun()}-${randomVerb()}`;
+export type SuperslugConfig = {
+  separator?: ('-' | '_' | '.') | {};
+};
+
+export const superslug = (config?: SuperslugConfig) => {
+  const separator = config?.separator ?? '-';
+
+  return `${randomAdjective()}${separator}${randomNoun()}${separator}${randomVerb()}`;
+};
