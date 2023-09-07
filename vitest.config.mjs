@@ -7,5 +7,9 @@ export default defineConfig({
     alias: {
       '$src/': `${cwd()}/src/`,
     },
+    coverage: {
+      provider: 'v8',
+      reporter: ['json', 'lcov', 'text', 'clover', 'text-summary'],
+    },
   },
 });
