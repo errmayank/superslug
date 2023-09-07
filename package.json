@@ -52,5 +52,15 @@
     "typescript": "5.2.2",
     "vitest": "0.34.3"
   },
-  "keywords": ["slug", "generate", "url", "random", "human-readable-id", "human", "readable", "id", "identifier"]
+  "keywords": [
+    "slug",
+    "generate",
+    "url",
+    "random",
+    "human-readable-id",
+    "human",
+    "readable",
+    "id",
+    "identifier"
+  ]
 }
