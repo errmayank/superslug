@@ -32,7 +32,7 @@ export const fmtWord = (word: string, fmt: Format): string => {
   }
 };
 
-export const randomAdjective = (fmt: Format): string => {
+export const randomAdjective = (fmt: Format = 'lowercase'): string => {
   const randomIndex = randomInteger(0, adjectives.length - 1);
   const adjective = adjectives.at(randomIndex);
   if (!adjective) {
@@ -42,7 +42,7 @@ export const randomAdjective = (fmt: Format): string => {
   return fmtWord(adjective, fmt);
 };
 
-export const randomNoun = (fmt: Format): string => {
+export const randomNoun = (fmt: Format = 'lowercase'): string => {
   const randomIndex = randomInteger(0, nouns.length - 1);
   const noun = nouns.at(randomIndex);
   if (!noun) {
@@ -52,7 +52,7 @@ export const randomNoun = (fmt: Format): string => {
   return fmtWord(noun, fmt);
 };
 
-export const randomVerb = (fmt: Format): string => {
+export const randomVerb = (fmt: Format = 'lowercase'): string => {
   const randomIndex = randomInteger(0, verbs.length - 1);
   const verb = verbs.at(randomIndex);
   if (!verb) {
