@@ -24,8 +24,8 @@
   "scripts": {
     "prebuild": "rm -rf ./build package.tgz",
     "build": "tsup --config=tsup.config.cjs",
-    "build:tarball": "pnpm build && (cp -a package.json LICENSE.md README.md ./build) && (cd ./build && npm pack --pack-destination ..) && mv superslug-*.tgz package.tgz",
-    "publish:tarball": "npm publish package.tgz",
+    "build:tarball": "pnpm run build && (cp -a package.json LICENSE.md README.md ./build) && (cd ./build && npm pack --pack-destination ..) && mv superslug-*.tgz package.tgz",
+    "publish": "pnpm run build:tarball && npm publish package.tgz",
     "dev": "tsup --config=tsup.config.cjs --watch",
     "lint": "eslint .",
     "format": "prettier --write .",
